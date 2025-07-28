@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="https://i.ibb.co.com/hXZsYxZ/heart.png" />
+  <title>Happy Birthday Valva 🥳🎂🎉</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #0f172a;
+      color: #f1f5f9;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    .page {
+      height: 100vh;
+      width: 100vw;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1s ease;
+    }
+
+    .page.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .highlight {
+      color: #facc15;
+      font-weight: bold;
+    }
+
+    .button {
+      background-color: #1e3a8a;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: 30px;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background-color: #2c4ca5;
+    }
+
+    img {
+      max-width: 70vw;
+      max-height: 50vh;
+      margin-bottom: 20px;
+    }
+
+    #slideshow {
+      width: 150px;
+      max-width: 40vw;
+      height: auto;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      transition: opacity 0.8s ease;
+      box-shadow: 0 4px 12px rgb(0, 0, 0.12);
+    }
+
+    .sparkle {
+      display: inline-block;
+      position: relative;
+      animation: gerakKananKiri 1.5s infinite ease-in-out;
+    }
+
+    @keyframes gerakKananKiri {
+      0%  { transform: translateY(5px);}
+      50% { transform: translateY(0);}
+      100%  {transform: translateY(5px);}
+    }
+
+    .circular-laugh {
+      display: inline-block;
+      animation: circle-wiggle 1s infinite linear;
+    }
+
+    @keyframes circle-wiggle {
+      0%   { transform: translate(0px, 0px); }
+      25%  { transform: translate(4px, -4px); }
+      50%  { transform: translate(8px, 0px); }
+      75%  { transform: translate(4px, 4px); }
+      100% { transform: translate(0px, 0px); }
+    }
+
+    .letter {
+      white-space: pre-line;
+      font-size: 1.1rem;
+      max-width: 600px;
+      text-align: left;
+      border-left: 3px solid #facc15;
+      padding-left: 15px;
+      min-height: 200px;
+    }
+
+    .falling {
+      position: fixed;
+      top: -30px;
+      font-size: 24px;
+      animation: fall linear infinite;
+      pointer-events: none;
+      z-index: 9999;
+      text-shadow: 0 0 5px white, 0 0 10px red;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(120vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .button {
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+
+      .letter {
+        font-size: 1rem;
+      }
+
+      #slideshow {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page active" id="page1">
+    <img src="peachhai.gif" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px;"/>
+    <h1>Alooo Valva! <span class="circular-laugh">👋😆</span></h1>
+    <p><strong>ᵔ ᵕ ᵔ</strong></p>
+    <button class="button" onclick="goToPage(2)" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1);">Start ♡</button>
+  </div>
+
+  <div class="page" id="page2">
+    <img src="peach.gif" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px;"/>
+    <h1><span class="sparkle">✨✨✨✨✨</span></h1>
+    <div>
+      <img src="terlope1.gif" style="width: 75px ; height: 75px; vertical-align: middle;">
+      <h1 class="sparkle">🩷</h1>
+      <img src="terlope2.gif" style="width: 75px ; height: 75px; vertical-align: middle;">
+    </div>
+    <button class="button" onclick="goToPage(3)" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1);">Next ♡</button>
+  </div>
+
+  <div class="page" id="page3">
+    <img src="envelope.gif"/>
+    <h1>Kira-kira isinya apa yaa!<span class="circular-laugh">🤔</span><img src="1.gif" style="width: 75px ; height: 75px; vertical-align: middle;"></h1>
+    <p>( ∩´͈ ᐜ `͈∩)</p>
+    <button class="button" onclick="goToPage(4)" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1);">Open ♡ </button>
+  </div>
+
+  <div class="page" id="page4">
+    <a href="javascript:void(0)" onclick="goToPage(5)">
+      <img id="slideshow" src="1.jpg" alt="Slideshow Image" />
+    </a>
+    <h2>My Precious, <span class="highlight">Valvaaa</span> <span style="color: red;">♡</span></h2>
+    <div class="letter" id="letterText"></div>
+  </div>
+
+  <audio id="bg-music" src="sound.mp3" autoplay loop muted ></audio>
+  
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script>
+    const fullLetter = `Happy birthday ke-21 Valvaa! 🥳🎂❤️
+      Hari ini tuh hari spesial, karena orang yang aku kangenin ini… ulang tahuuun! hehe :v 😝🎉
+
+      Ciyee.. ada yang bertambah usianya niih :v 😆
+
+      Semoga di usia baru ini, kamu selalu dikelilingi hal-hal baik.
+      Semoga segala doa serta cita-cita kamu, pelan-pelan bisa terwujud 🫶
+      Dan semoga hari ini menjadi awal dari tahun yang penuh kebahagiaan dan keberkahan untuk Valvaa 😊
+
+      😚✨🫶🎉🥳🎂
+      -Fauzan-`;
+
+    const imageList = [
+      "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg",
+      "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg"
+    ];
+    let currentImageIndex = 0;
+    const slideshowImg = document.getElementById("slideshow");
+
+    function startSlideshow() {
+      setInterval(() => {
+        slideshowImg.style.opacity = 0;
+        setTimeout(() => {
+          currentImageIndex = (currentImageIndex + 1) % imageList.length;
+          slideshowImg.src = imageList[currentImageIndex];
+          slideshowImg.style.opacity = 1;
+        }, 1000);
+      }, 3000);
+    }
+
+    function goToPage(pageNum) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(p => p.classList.remove('active'));
+      const next = document.getElementById(`page${pageNum}`);
+      next.classList.add('active');
+
+      if (pageNum === 4) {
+        const music = document.getElementById("bg-music");
+        music.muted = false;
+        music.play().catch(e => console.log("Autoplay blocked:", e));
+
+        confetti({ particleCount: 150, spread: 100, origin: { y: 0.6 } });
+        typeText(fullLetter, document.getElementById('letterText'), 36);
+        startFallingSymbols();
+        startSlideshow();
+      }
+    }
+
+    function typeText(text, element, speed) {
+      element.innerHTML = '';
+      let i = 0;
+      function type() {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        }
+      }
+      type();
+    }
+
+    function startFallingSymbols() {
+      setInterval(() => {
+        const el = document.createElement('div');
+        el.classList.add('falling');
+        const emojis = ['💙', '⭐', '❤️', '💖', '💕'];
+        el.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+        el.style.left = Math.random() * 100 + 'vw';
+        el.style.animationDuration = (3 + Math.random() * 2) + 's';
+        el.style.fontSize = (20 + Math.random() * 15) + 'px';
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 6000);
+      }, 250);
+    }
+  </script>
+  <div class="page" id="page5">
+    <div>
+      <img src="1.jpg" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px; width: 220px; height: 220px;"/>
+      <img src="2.jpg" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px; width: 220px; height: 220px;"/>
+      <img src="9.jpg" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px; width: 220px; height: 220px;"/>
+      <img src="5.jpg" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px; width: 220px; height: 220px;"/>
+      <img src="7.jpg" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px; width: 220px; height: 220px;"/>
+    </div>
+    <div>
+      <img src="10.jpg" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px; width: 220px; height: 220px;"/>
+      <img src="8.jpg" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px; width: 220px; height: 220px;"/>
+      <img src="3.jpg" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px; width: 220px; height: 220px;"/>
+      <img src="6.jpg" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px; width: 220px; height: 220px;"/>
+      <img src="4.jpg" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px; width: 220px; height: 220px;"/>
+    </div>
+    <div style="text-align: center; margin-top: 40px; padding-top: 10px; font-size: 14px; color: #555;">
+      <p>© 2025 | Dibuat oleh Ojan, dibantu GPT :v</a></p>
+    </div>
+  </div>
+</body>
+</html>
