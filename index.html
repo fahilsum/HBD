@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
   <link rel="icon" href="https://i.ibb.co.com/hXZsYxZ/heart.png" />
   <title>Happy Birthday Valva 🥳🎂🎉</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -15,7 +17,7 @@
     body {
       background-color: #0f172a;
       color: #f1f5f9;
-      font-family: 'Poppins', sans-serif;
+      font-family: '', cursive;
       overflow: hidden;
     }
 
@@ -32,12 +34,14 @@
       text-align: center;
       padding: 20px;
       opacity: 0;
+      transform: scale(0.73); /* baru ditambah, efek zoom. atur angka untuk melihat skala zoom */ 
       pointer-events: none;
-      transition: opacity 1s ease;
+      transition: opacity 0.5s ease, transform 0.5s ease; /* sebelumnya tidak ada transform dan opaciti 1s */ 
     }
 
     .page.active {
       opacity: 1;
+      transform: scale(1); /* zoom ke ukuran normal, tadinya ga ada transform */
       pointer-events: auto;
     }
 
@@ -57,7 +61,9 @@
     }
 
     .button {
+      font-family: 'Nunito' , cursive;
       background-color: #1e3a8a;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 1);
       color: #fff;
       border: none;
       border-radius: 25px;
@@ -114,11 +120,11 @@
     }
 
     .letter {
-      white-space: pre-line;
       font-size: 1.1rem;
+      white-space: pre-line;
       max-width: 600px;
       text-align: left;
-      border-left: 3px solid #facc15;
+      border-left: 3px solid #ffffff;
       padding-left: 15px;
       min-height: 200px;
     }
@@ -140,6 +146,36 @@
       }
     }
 
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 20px;
+      overflow-y: auto;
+      max-height: 90vh;
+    }
+
+    .gallery-img {
+      width: 100%;
+      max-width: 160px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 1);
+    }
+
+    @media (max-width: 768px) {
+      .gallery-img {
+        max-width: 120px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-img {
+        max-width: 100px;
+      }
+    }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 1.8rem;
@@ -147,11 +183,6 @@
 
       h2 {
         font-size: 1.5rem;
-      }
-
-      .button {
-        padding: 10px 20px;
-        font-size: 1rem;
       }
 
       .letter {
@@ -165,13 +196,15 @@
   </style>
 </head>
 <body>
+  <!-- Halaman 1 -->
   <div class="page active" id="page1">
     <img src="peachhai.gif" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px;"/>
     <h1>Alooo Valva! <span class="circular-laugh">👋😆</span></h1>
-    <p><strong>ᵔ ᵕ ᵔ</strong></p>
-    <button class="button" onclick="goToPage(2)" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1);">Start ♡</button>
+    <h3>ᵔ ᵕ ᵔ</h3>
+    <button class="button" onclick="goToPage(2)">Start ♡</button>
   </div>
 
+  <!-- Halaman 2 -->
   <div class="page" id="page2">
     <img src="peach.gif" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px;"/>
     <h1><span class="sparkle">✨✨✨✨✨</span></h1>
@@ -180,25 +213,28 @@
       <h1 class="sparkle">🩷</h1>
       <img src="terlope2.gif" style="width: 75px ; height: 75px; vertical-align: middle;">
     </div>
-    <button class="button" onclick="goToPage(3)" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1);">Next ♡</button>
+    <button class="button" onclick="goToPage(3)">Next ♡</button>
   </div>
 
+  <!-- Halaman 3 -->
   <div class="page" id="page3">
     <img src="envelope.gif"/>
     <h1>Kira-kira isinya apa yaa!<span class="circular-laugh">🤔</span><img src="1.gif" style="width: 75px ; height: 75px; vertical-align: middle;"></h1>
     <p>( ∩´͈ ᐜ `͈∩)</p>
-    <button class="button" onclick="goToPage(4)" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1);">Open ♡ </button>
+    <button class="button" onclick="goToPage(4)">Open ♡ </button>
   </div>
 
+  <!-- Halaman 4 -->
   <div class="page" id="page4">
     <a href="javascript:void(0)" onclick="goToPage(5)">
       <img id="slideshow" src="1.jpg" alt="Slideshow Image" />
     </a>
-    <h2>My Precious, <span class="highlight">Valvaaa</span> <span style="color: red;">♡</span></h2>
+    <h2 style="font-family: 'Dancing Script';">My Precious, <span class="highlight">Valvaaa</span> <span style="color: red;">♡</span></h2>
     <div class="letter" id="letterText"></div>
   </div>
 
-  <audio id="bg-music" src="sound.mp3" autoplay loop muted ></audio>
+  <audio id="clickSound" src="click.mp3" preload="auto"></audio>
+  <audio id="bg-music" src="sound.mp3" autoplay loop muted ></audio> 
   
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
   <script>
@@ -212,11 +248,11 @@
       Dan semoga hari ini menjadi awal dari tahun yang penuh kebahagiaan dan keberkahan untuk Valvaa 😊
 
       😚✨🫶🎉🥳🎂
-      -Fauzan-`;
+      𝜗𝜚 Fauzan 𝜗𝜚`;
 
     const imageList = [
-      "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg",
-      "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg"
+      "1.jpg", "2.jpg", "4.jpg", "9.jpg", "6.jpg",
+      "3.jpg", "8.jpg", "5.jpg", "7.jpg", "10.jpg"
     ];
     let currentImageIndex = 0;
     const slideshowImg = document.getElementById("slideshow");
@@ -232,11 +268,30 @@
       }, 3000);
     }
 
+    // efek suara klik tombol
+    function playClickSound() {
+      const sound = document.getElementById("clickSound");
+      sound.currentTime = 0; //mulai dari awal
+      sound.play();
+    }
+
     function goToPage(pageNum) {
+      playClickSound(); // efek suara akan bunyi saat tombol pindah halaman di tekan
+      // bisa juga manual, dengan menaruh playclickSound(); di setiap button.
+      // contoh, <button onclick="goToPage(2); playclickSound();"> contoh </button>
+
       const pages = document.querySelectorAll('.page');
-      pages.forEach(p => p.classList.remove('active'));
-      const next = document.getElementById(`page${pageNum}`);
-      next.classList.add('active');
+      const currentPage = document.querySelector('.page.active');
+      const nextPage = document.getElementById(`page${pageNum}`);
+
+      if (currentPage) {
+        currentPage.classList.remove('active');
+      }
+      
+      // Delay 500ms untuk memberi waktu transisi fade/zoom keluar
+      setTimeout(() => {
+        nextPage.classList.add('active');
+      
 
       if (pageNum === 4) {
         const music = document.getElementById("bg-music");
@@ -244,10 +299,11 @@
         music.play().catch(e => console.log("Autoplay blocked:", e));
 
         confetti({ particleCount: 150, spread: 100, origin: { y: 0.6 } });
-        typeText(fullLetter, document.getElementById('letterText'), 36);
+        typeText(fullLetter, document.getElementById('letterText'), 36); //mengatur kecepatan teks muncul
         startFallingSymbols();
         startSlideshow();
-      }
+        }
+      }, 500); // <-- harus sama dengan durasi transisi yang ada di css. (.page) kalau 1s berarti isi 1000
     }
 
     function typeText(text, element, speed) {
@@ -278,19 +334,17 @@
     }
   </script>
   <div class="page" id="page5">
-    <div>
-      <img src="1.jpg" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px; width: 220px; height: 220px;"/>
-      <img src="2.jpg" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px; width: 220px; height: 220px;"/>
-      <img src="9.jpg" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px; width: 220px; height: 220px;"/>
-      <img src="5.jpg" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px; width: 220px; height: 220px;"/>
-      <img src="7.jpg" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px; width: 220px; height: 220px;"/>
-    </div>
-    <div>
-      <img src="10.jpg" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px; width: 220px; height: 220px;"/>
-      <img src="8.jpg" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px; width: 220px; height: 220px;"/>
-      <img src="3.jpg" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px; width: 220px; height: 220px;"/>
-      <img src="6.jpg" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px; width: 220px; height: 220px;"/>
-      <img src="4.jpg" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 1); border-radius: 15px; width: 220px; height: 220px;"/>
+    <div class="gallery">
+      <img src="1.jpg" class="gallery-img"/>
+      <img src="2.jpg" class="gallery-img"/>
+      <img src="4.jpg" class="gallery-img"/>
+      <img src="9.jpg" class="gallery-img"/>
+      <img src="6.jpg" class="gallery-img"/>
+      <img src="3.jpg" class="gallery-img"/>
+      <img src="8.jpg" class="gallery-img"/>
+      <img src="5.jpg" class="gallery-img"/>
+      <img src="7.jpg" class="gallery-img"/>
+      <img src="10.jpg" class="gallery-img"/>
     </div>
     <div style="text-align: center; margin-top: 40px; padding-top: 10px; font-size: 14px; color: #555;">
       <p>© 2025 | Dibuat oleh Ojan, dibantu GPT :v</a></p>
